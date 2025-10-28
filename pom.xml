@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>Facturacion-Primera.Entrega</groupId>
-	<artifactId>primer-entrega</artifactId>
+	<artifactId>primer_entrega</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>primer-entrega</name>
 	<description>com.coderhouse.primer-entrega</description>

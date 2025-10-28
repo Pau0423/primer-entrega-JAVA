@@ -28,14 +28,13 @@ public class Factura {
     @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleFactura> detalles = new ArrayList<>();
 
-    // --- Constructores ---
+
     public Factura() {}
 
     public Factura(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    // --- Helpers ---
     public void addDetalle(DetalleFactura d) {
         d.setFactura(this);
         detalles.add(d);

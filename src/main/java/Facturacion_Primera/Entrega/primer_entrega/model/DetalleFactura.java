@@ -41,7 +41,7 @@ public class DetalleFactura {
         return precioUnitario.multiply(BigDecimal.valueOf(cantidad));
     }
 
-    // getters/setters
+
     public Long getId() { return id; }
     public Integer getCantidad() { return cantidad; }
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
