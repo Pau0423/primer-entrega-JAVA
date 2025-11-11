@@ -1,13 +1,17 @@
 package Facturacion_Primera.Entrega.primer_entrega.model;
 
-
-
 import jakarta.persistence.*;
-
+import lombok.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "detalle_factura")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
 public class DetalleFactura {
 
     @Id
@@ -22,13 +26,15 @@ public class DetalleFactura {
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "factura_id", nullable = false)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Factura factura;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "producto_id", nullable = false)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Producto producto;
-
-    public DetalleFactura() {}
 
     public DetalleFactura(Producto producto, Integer cantidad, BigDecimal precioUnitario) {
         this.producto = producto;
@@ -41,14 +47,6 @@ public class DetalleFactura {
         return precioUnitario.multiply(BigDecimal.valueOf(cantidad));
     }
 
-
-    public Long getId() { return id; }
-    public Integer getCantidad() { return cantidad; }
-    public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
-    public BigDecimal getPrecioUnitario() { return precioUnitario; }
-    public void setPrecioUnitario(BigDecimal precioUnitario) { this.precioUnitario = precioUnitario; }
-    public Factura getFactura() { return factura; }
-    public void setFactura(Factura factura) { this.factura = factura; }
-    public Producto getProducto() { return producto; }
-    public void setProducto(Producto producto) { this.producto = producto; }
+    public void setPrecioUnitario(Double precio) {
+    }
 }
