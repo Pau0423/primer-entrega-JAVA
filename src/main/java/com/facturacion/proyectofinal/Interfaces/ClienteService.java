@@ -1,0 +1,14 @@
+package com.facturacion.proyectofinal.Interfaces;
+
+import com.facturacion.proyectofinal.model.Cliente;
+import java.util.List;
+import java.util.Optional;
+
+public interface ClienteService {
+    List<Cliente> findAll();
+    Optional<Cliente> findById(Long id);
+    Cliente create(Cliente c);
+    Cliente update(Long id, Cliente c);
+    void delete(Long id);
+    boolean existsByEmail(String email);
+}

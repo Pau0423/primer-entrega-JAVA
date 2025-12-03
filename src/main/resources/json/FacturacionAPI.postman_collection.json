@@ -1,0 +1,109 @@
+{
+  "info": {
+    "name": "Facturacion API - Proyecto Final",
+    "_postman_id": "f13bd877-f922-4e13-9de4-aaa94c01bb10",
+    "description": "Colección completa de pruebas para la API de Facturación",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Paula Rodríguez\",\n  \"email\": \"paula@gmail.com\",\n  \"telefono\": \"099123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "clientes"]
+        }
+      }
+    },
+    {
+      "name": "Listar Clientes",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/clientes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "clientes"]
+        }
+      }
+    },
+    {
+      "name": "Crear Producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"iPhone 16 Pro Max\",\n  \"precio\": 450.00,\n  \"stock\": 20\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/productos",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "productos"]
+        }
+      }
+    },
+    {
+      "name": "Listar Productos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/productos",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "productos"]
+        }
+      }
+    },
+    {
+      "name": "Crear Factura",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clienteId\": 1,\n  \"items\": [\n    { \"productoId\": 1, \"cantidad\": 2 }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/comprobantes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "comprobantes"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Factura por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/comprobantes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "comprobantes", "1"]
+        }
+      }
+    }
+  ]
+}
